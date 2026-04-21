@@ -1,152 +1,71 @@
-# OpenTeleprompter
+# OpenTeleprompter (Fork by Shanky)
 
-A free, open source voice-activated teleprompter for **macOS** (Windows v3 coming soon).
-
-**Speak → it scrolls. Stop → it pauses. No subscriptions. No cloud. No accounts.**
+Forked from [ArunNGun/openTeleprompt](https://github.com/ArunNGun/openTeleprompt), full credit to [Arun Kumar](https://github.com/ArunNGun) for building this excellent tool.
 
 ---
 
-## Download — v3.0.0
+## Why this fork exists
 
-| Platform | Link | Notes |
-|---|---|---|
-| 🍎 Apple Silicon (M1–M4) | [Download .dmg](https://github.com/ArunNGun/openTeleprompt/releases/latest) | macOS 13+ |
-| 🍎 Intel Mac | [Download .dmg](https://github.com/ArunNGun/openTeleprompt/releases/latest) | macOS 13+ |
-| 🪟 Windows (x64) | [v2.2.1 stable](https://github.com/ArunNGun/openTeleprompt/releases/tag/v2.2.1) | v3 coming soon |
+I work in partnerships and enterprise sales at [KodeKloud](https://kodekloud.com), an online technical training platform. My week involves webinars, partner calls, panel discussions, Loom recordings, and sales demos. I need a teleprompter that is local, private, and built for real presentation workflows, not just reading a script.
 
-**Landing page:** https://arunngun.github.io/openTeleprompt/
+This fork is my personal workspace for adapting OpenTeleprompter to those use cases. Any improvements worth sharing will go back upstream as PRs to the original project.
 
 ---
 
-## What's New in v3.0
+## My use cases
 
-### Dynamic Island — properly done
-The notch overlay now has real concave corners that bite into the menubar bezel exactly like Apple's Dynamic Island. Apple spring physics (`cubic-bezier(0.32, 0.72, 0, 1)`) for all expand/collapse animations. Looks like part of the OS.
-
-### Full React frontend
-Entire UI rebuilt in React + Vite with Zustand state management. Faster, cleaner, easier to extend.
-
-### Rich text editor
-Bold, color highlights, and smart cue markers: `[PAUSE]` `[SLOW]` `[BREATHE]`. Format your script exactly how you want to deliver it.
-
-### Script library
-Save multiple scripts, switch instantly. Auto-saves on start. Local only — no cloud, no account.
-
-### Light & dark theme
-Pastel light mode default. Toggle from settings or the menubar. Persists across sessions.
-
-### Live controls while reading
-Adjust scroll speed and font size on the fly — no need to pause your delivery.
-
-### Redesigned settings panel
-Clean React settings view with auto-height. All preferences in one place, persisted across sessions.
+- Enterprise sales demos with structured talking points (not word-for-word scripts)
+- Panel discussions where I need bullet-point prompts, not full paragraphs
+- Webinars and Loom recordings where staying on message matters
+- Partner calls where I want key data points visible while speaking naturally
 
 ---
 
-## Features
+## Development approach
 
-- 🏝️ **Dynamic Island mode** — real concave corners, Apple spring physics, pixel-perfect notch fit
-- 🖥️ **Classic mode** — draggable floating pill, works on any Mac (notch or not)
-- 🎙️ **Voice-activated scroll** — frequency analysis (85–3400 Hz), not just volume. Only your voice triggers it
-- 📝 **Rich text editor** — bold, highlights, cue markers `[PAUSE]` `[SLOW]` `[BREATHE]`
-- 📚 **Script library** — save and switch multiple scripts, auto-saves
-- 🔇 **Invisible during screen share** — Zoom, Meet, Loom can't see it. Only you can
-- 🌗 **Light & dark theme** — pastel light default, toggleable
-- ⚡ **Live controls** — speed + font size adjustable while reading
-- 🌫️ **Opacity control** — barely-there to solid
-- ⌨️ **Global shortcuts** — ⌘⇧Space, ⌘⇧↑↓, ⌘⇧R
+This fork follows a behavior-first development framework. Each version proves one user behavior has changed, not just that a feature was shipped. No version starts until the previous one is validated.
+
+| Version | Behavior to prove | Completion criterion | Status |
+|---------|-------------------|----------------------|--------|
+| v0.1 | **Entry:** I can go from having a script to presenting in under 60 seconds | Used for one real presentation, friction points documented | In progress |
+| v0.2 | **Return:** I reach for this tool before every call without hesitation | Used voluntarily 3+ times over two weeks | Not started |
+| v0.3 | **Action:** I prepare content differently because I know I will use this tool | Prep workflow has visibly changed (e.g., structuring notes with sections) | Not started |
+| v1.0 | **Habit:** I do not present without this tool | It is part of my standard toolkit without thinking about it | Not started |
 
 ---
 
-## Version History
+## Current status
 
-### v3.0.0 — Dynamic Island Redesign *(latest)*
-- Full React + Vite frontend rewrite
-- Dynamic Island with real concave corners + spring physics
-- Rich text editor (Tiptap), script library, light/dark theme
-- Live speed + font control while reading
-- Playwright visual test suite (16 tests, 48 state combos)
-- macOS only — Windows v3 in progress
-
-### v2.2.1 — Windows Polish
-- Platform-aware tray hint images (Mac + Windows)
-- Author GitHub link in settings
-
-### v2.2.0 — Windows Support
-- Full Windows support (Classic + Top Bar modes)
-- Native Windows settings panel (Fluent-style)
-- GitHub Actions CI — auto-builds Mac + Windows on tag push
-
-### v2.0.0 — Tauri/Rust Rewrite
-
-| | v1.x (Electron) | v2.x+ (Tauri) |
-|---|---|---|
-| Binary size | ~150 MB | **4.6 MB** |
-| DMG size | ~80 MB | **2.6 MB** |
-| RAM usage | ~200 MB | **~40 MB** |
+- Built from source on Apple Silicon (M4 Pro, 48GB, macOS)
+- Running in dev mode via `npm run dev`
+- No code changes yet, still in the v0.1 audit phase (testing against real use cases before touching anything)
 
 ---
 
-## Project Structure
+## What is next
 
-```
-openTeleprompt/
-├── src-tauri/          ← Rust backend
-│   ├── src/lib.rs      ← All Tauri commands
-│   └── tauri.conf.json
-├── frontend/           ← React + Vite frontend
-│   └── src/            ← App.jsx, views, Zustand store
-├── index.html          ← Vite entry point
-├── settings.html       ← Settings panel entry
-├── .github/workflows/  ← CI — auto-builds macOS on release tag
-├── electron/           ← Legacy Electron v1.x (archived)
-└── docs/               ← GitHub Pages landing page
-```
+After the v0.1 audit, planned exploration areas include:
+
+- File import (.txt, .md) to replace paste-only input
+- Named script slots for quick switching between presentations
+- Content modes (full script vs. bullet points vs. FAQ pairs)
+- Section markers with keyboard shortcuts for jumping between segments
+- Font and contrast controls for different display environments
+
+These are directions, not commitments. Scope will be determined by what the v0.1 audit reveals.
 
 ---
 
-## Development
+## Contributing back
 
-```bash
-# Install dependencies
+If any changes made here are useful to the broader project, they will be submitted as PRs to [ArunNGun/openTeleprompt](https://github.com/ArunNGun/openTeleprompt). This fork exists to experiment freely, not to fragment the project.
+
+---
+
+## Build instructions
+
+Same as upstream. Requires Rust + Cargo and Node.js 18+.
 npm install
-
-# Dev mode (hot reload)
 npm run dev
 
-# Production build — macOS
-npm run build
-
-# Production build — Windows
-npm run build:win
-```
-
-**Requirements:** Rust + Cargo, Node.js 18+
-
----
-
-## First Launch
-
-### macOS
-Right-click the app → **Open** → click **Open** in the security dialog.
-
-If you see "App is damaged":
-```bash
-xattr -cr /Applications/OpenTeleprompter.app
-```
-This strips the macOS quarantine flag. One-time, you won't need it again.
-
-### Windows (v2.2.1)
-Run the `.exe` installer. If Windows SmartScreen blocks it, click **More info → Run anyway**.
-
----
-
-## Contributing
-
-PRs welcome! See [CONTRIBUTING.md](CONTRIBUTING.md).
-
----
-
-## License
-
-MIT — free forever.
+For full documentation, features, and release downloads, see the [original project](https://github.com/ArunNGun/openTeleprompt).
