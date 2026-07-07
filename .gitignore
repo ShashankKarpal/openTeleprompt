@@ -31,3 +31,16 @@ public/
 vite.config.ts
 tsconfig.json
 tsconfig.node.json
+
+# hardening baseline
+.env
+*.pem
+*.key
+*.db
+*.sqlite
+secrets.*
+credentials.*
+*.bak
+local_settings.py
+__pycache__/
+*.pyc
