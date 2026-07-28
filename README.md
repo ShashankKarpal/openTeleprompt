@@ -3,10 +3,10 @@
 <p align="center"><b>A personal fork of OpenTeleprompter, currently tracking upstream with no code changes.</b></p>
 
 <p align="center">
-  <img alt="Fork" src="https://img.shields.io/badge/fork%20of-ArunNGun%2FopenTeleprompt-8B9690?style=flat-square">
-  <img alt="Status" src="https://img.shields.io/badge/status-tracking%20upstream-8B9690?style=flat-square">
-  <img alt="Changes" src="https://img.shields.io/badge/own%20changes-CI%20sync%20only-8B9690?style=flat-square">
-  <img alt="Stack" src="https://img.shields.io/badge/built%20with-Tauri%20%C2%B7%20JS-8B9690?style=flat-square">
+  <img alt="Fork" src="https://img.shields.io/badge/fork%20of-ArunNGun%2FopenTeleprompt-1C1B1D?style=flat-square">
+  <img alt="Status" src="https://img.shields.io/badge/status-tracking%20upstream-1C1B1D?style=flat-square">
+  <img alt="Changes" src="https://img.shields.io/badge/own%20changes-CI%20sync%20only-1C1B1D?style=flat-square">
+  <img alt="Stack" src="https://img.shields.io/badge/built%20with-Tauri%20%C2%B7%20JS-1C1B1D?style=flat-square">
 </p>
 
 ## Attribution
