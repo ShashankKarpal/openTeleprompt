@@ -1,69 +1,62 @@
-# OpenTeleprompter (Fork)
+<h1 align="center">OpenTeleprompter (Fork)</h1>
 
-Forked from [ArunNGun/openTeleprompt](https://github.com/ArunNGun/openTeleprompt), full credit to [Arun Kumar](https://github.com/ArunNGun) for building this.
+<p align="center"><b>A personal fork of OpenTeleprompter, currently tracking upstream with no code changes.</b></p>
 
----
+<p align="center">
+  <img alt="Fork" src="https://img.shields.io/badge/fork%20of-ArunNGun%2FopenTeleprompt-8B9690?style=flat-square">
+  <img alt="Status" src="https://img.shields.io/badge/status-tracking%20upstream-8B9690?style=flat-square">
+  <img alt="Changes" src="https://img.shields.io/badge/own%20changes-CI%20sync%20only-8B9690?style=flat-square">
+  <img alt="Stack" src="https://img.shields.io/badge/built%20with-Tauri%20%C2%B7%20JS-8B9690?style=flat-square">
+</p>
 
-## Why this fork exists
+## Attribution
 
-Came across this project and liked the idea immediately. A local, private, voice-activated teleprompter with no subscriptions or cloud dependency is exactly the kind of tool worth exploring. This fork is my personal workspace for testing and adapting it to my own workflow. Any improvements worth sharing will go back upstream as PRs.
+Forked from [ArunNGun/openTeleprompt](https://github.com/ArunNGun/openTeleprompt). Full credit to [Arun Kumar](https://github.com/ArunNGun) for building it. A local, private, voice-activated teleprompter with no subscription and no cloud dependency is worth exploring, and this fork exists to test it against a real workflow. Anything worth sharing goes back upstream as a pull request rather than staying here.
 
----
+For features, documentation, and release downloads, see the [original project](https://github.com/ArunNGun/openTeleprompt).
 
-## Use cases I am exploring
+## What this fork adds
 
-- Presentations and demos with structured talking points, not word-for-word scripts
-- Panel discussions where bullet-point prompts work better than full paragraphs
-- Recordings and calls where staying on message matters
-- Situations where key points need to be visible while speaking naturally
+- A daily GitHub Actions job that fast-forwards this fork from upstream.
+- Nothing else yet. No code changes have been made.
 
----
+## Use cases being evaluated
 
-## Development approach
+- Presentations and demos with structured talking points rather than word-for-word scripts.
+- Panel discussions where bullet prompts work better than paragraphs.
+- Recordings and calls where staying on message matters.
+- Situations needing key points visible while speaking naturally.
 
-This fork follows a behavior-first framework. Each version proves one user behavior has changed, not just that a feature was shipped. No version starts until the previous one is validated.
+## Build
 
-| Version | Behavior to prove | Completion criterion | Status |
-|---------|-------------------|----------------------|--------|
-| v0.1 | **Entry:** I can go from having a script to presenting in under 60 seconds | Used for one real presentation, friction points documented | In progress |
-| v0.2 | **Return:** I reach for this tool before every call without hesitation | Used voluntarily 3+ times over two weeks | Not started |
-| v0.3 | **Action:** I prepare content differently because I know I will use this tool | Prep workflow has visibly changed | Not started |
-| v1.0 | **Habit:** I do not present without this tool | It is part of my standard toolkit without thinking about it | Not started |
+Requires: Rust and Cargo, Node.js 18 or later. Same as upstream.
 
----
-
-## Current status
-
-- Built from source on Apple Silicon (M4 Pro, macOS)
-- App bundled and installed via `npm run build`
-- No code changes yet, still in the v0.1 audit phase
-
----
-
-## What is next
-
-After the v0.1 audit, planned exploration areas include:
-
-- File import (.txt, .md) to replace paste-only input
-- Named script slots for quick switching between scripts
-- Content modes (full script vs. bullet points vs. FAQ pairs)
-- Section markers with keyboard shortcuts for jumping between segments
-- Font and contrast controls for different display environments
-
-These are directions, not commitments. Scope will be determined by what the v0.1 audit reveals.
-
----
-
-## Contributing back
-
-If any changes made here are useful to the broader project, they will be submitted as PRs to [ArunNGun/openTeleprompt](https://github.com/ArunNGun/openTeleprompt). This fork exists to experiment freely, not to fragment the project.
-
----
-
-## Build instructions
-
-Same as upstream. Requires Rust + Cargo and Node.js 18+.
+```bash
+git clone https://github.com/ShashankKarpal/openTeleprompt.git
+cd openTeleprompt
 npm install
 npm run build
+```
 
-For full documentation, features, and release downloads, see the [original project](https://github.com/ArunNGun/openTeleprompt).
+## Roadmap
+
+Every version must prove one behavior changed, not that a feature shipped. No version starts until the previous one is validated.
+
+| Version | Behavior to prove | Completion criterion | Status |
+|---|---|---|---|
+| v0.1 | Entry: script to presenting in under 60 seconds | Used for one real presentation, friction documented | In progress |
+| v0.2 | Return: reached for before every call | Used voluntarily 3 or more times over two weeks | Planned |
+| v0.3 | Action: content is prepared differently because the tool exists | Prep workflow has visibly changed | Planned |
+| v1.0 | Habit: not presenting without it | Part of the standard toolkit | Planned |
+
+Directions under consideration after the v0.1 audit, none committed: file import for `.txt` and `.md`, named script slots, content modes (full script, bullets, FAQ pairs), section markers with keyboard shortcuts, font and contrast controls.
+
+## License
+
+**Upstream publishes no licence.** The [original project](https://github.com/ArunNGun/openTeleprompt) ships no `LICENSE` file and declares no licence field, which means the code is all rights reserved by its author. This fork adds no licence of its own and grants no rights it does not hold. Treat it as viewable source, not open source.
+
+If you want to use this, ask the upstream author.
+
+## Author
+
+Fork maintained by Shashank Karpal. Upstream by Arun Kumar.
